@@ -1,4 +1,8 @@
 import discord
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class MyClient(discord.Client):
   async def on_ready(self):
@@ -145,4 +149,4 @@ intents.guild_scheduled_events = True
 intents.members = True
 
 client = MyClient(intents=intents)
-client.run('MTM0OTQwNDIxODE0MTcwNDI1NQ.GoJO9G.5RcXyMau3td7NJi0BTxzfHcWMblwU4vmmgdWyk')
+client.run(os.getenv('EVENT_BOT_TOKEN'))
